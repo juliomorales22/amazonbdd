@@ -1,4 +1,4 @@
-package com.example.amazoncom;
+package pageObjects;
 
 import java.time.Duration;
 import org.openqa.selenium.WebDriver;
@@ -10,20 +10,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AmazonMainPage {
 
-  final static String URL_WEB_AMAZON = "https://www.amazon.es/";
   WebDriver driver;
   @FindBy(id = "twotabsearchtextbox")
-  WebElement searchField;
+  public WebElement searchField;
+
   @FindBy(id = "nav-search-submit-button")
-  WebElement searchButton;
-  @FindBy(id = "nav-cart")
-  WebElement linkCart;
-  @FindBy(css = "a[class='a-text-center'][2]")
-  WebElement linkDaysOffer;
-  @FindBy(css = "div[class=\"a-section maple-banner__text\"]")
-  WebElement textAmazonRecargas;
-  @FindBy(css = "h2")
-  WebElement emptyCartMessage;
+  public WebElement searchButton;
+  final static String URL_WEB_AMAZON = "https://www.amazon.es/";
 
   public AmazonMainPage(WebDriver driver) {
     this.driver = driver;

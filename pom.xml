@@ -45,6 +45,12 @@
       <version>${cucumber-java.version}</version>
     </dependency>
     <dependency>
+      <artifactId>cucumber-junit</artifactId>
+      <groupId>io.cucumber</groupId>
+      <scope>test</scope>
+      <version>${cucumber-junit.version}</version>
+    </dependency>
+    <dependency>
       <artifactId>allure-junit5</artifactId>
       <groupId>io.qameta.allure</groupId>
       <scope>test</scope>
@@ -130,6 +136,7 @@
     <org.testng.version>7.8.0</org.testng.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <slf4j-api.version>2.0.7</slf4j-api.version>
+    <cucumber-junit.version>7.13.0</cucumber-junit.version>
 
   </properties>
   <!-- https://mvnrepository.com/artifact/org.assertj/assertj-core -->
