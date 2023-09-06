@@ -45,10 +45,10 @@
       <version>${cucumber-java.version}</version>
     </dependency>
     <dependency>
-      <artifactId>cucumber-junit</artifactId>
       <groupId>io.cucumber</groupId>
-      <scope>test</scope>
+      <artifactId>cucumber-junit</artifactId>
       <version>${cucumber-junit.version}</version>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <artifactId>allure-junit5</artifactId>
@@ -89,13 +89,13 @@
       <artifactId>junit-jupiter-api</artifactId>
       <groupId>org.junit.jupiter</groupId>
       <scope>test</scope>
-      <version>${junit.version}</version>
+      <version>${junitjupiter-api.version}</version>
     </dependency>
     <dependency>
       <artifactId>junit-jupiter-engine</artifactId>
       <groupId>org.junit.jupiter</groupId>
       <scope>test</scope>
-      <version>${junit.version}</version>
+      <version>${junitjupiter.version}</version>
     </dependency>
     <dependency>
       <artifactId>slf4j-simple</artifactId>
@@ -113,7 +113,7 @@
       <artifactId>junit</artifactId>
       <groupId>junit</groupId>
       <scope>test</scope>
-      <version>4.9</version>
+      <version>${junit.version}</version>
     </dependency>
   </dependencies>
   <groupId>com.example</groupId>
@@ -128,7 +128,9 @@
     <cucumber-java.version>7.13.0</cucumber-java.version>
     <io.github.bonigarcia.version>5.4.1</io.github.bonigarcia.version>
     <io.qameta.allure.version>2.12.0</io.qameta.allure.version>
-    <junit.version>5.9.3</junit.version>
+    <junit.version>4.9</junit.version>
+    <junitjupiter-api.version>5.10.0</junitjupiter-api.version>
+
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
     <org.apache.maven.plugins.version>2.22.2</org.apache.maven.plugins.version>
@@ -137,7 +139,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <slf4j-api.version>2.0.7</slf4j-api.version>
     <cucumber-junit.version>7.13.0</cucumber-junit.version>
-
+    <junitjupiter.version>5.9.3</junitjupiter.version>
   </properties>
   <!-- https://mvnrepository.com/artifact/org.assertj/assertj-core -->
 
