@@ -3,6 +3,7 @@ package pageObjects;
 import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -20,12 +21,13 @@ public class AmazonMainPage {
 
   public AmazonMainPage(WebDriver driver) {
     this.driver = driver;
+    this.driver = new ChromeDriver();
     PageFactory.initElements(driver, this);
   }
 
   public void openHomePage() {
     driver.get(URL_WEB_AMAZON);
-    WebElement waiting = (new WebDriverWait(driver, Duration.ofSeconds(30)).until(
+    WebElement waiting = (new WebDriverWait(this.driver, Duration.ofSeconds(30)).until(
         ExpectedConditions.visibilityOf(searchField)));
   }
 
