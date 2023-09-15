@@ -2,7 +2,6 @@ package com.example.amazoncom.pageObjects;
 
 import com.example.amazoncom.utils.HelperClass;
 import java.time.Duration;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -11,7 +10,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AmazonMainPage {
 
-  public WebDriver driver;
   @FindBy(id = "twotabsearchtextbox")
   public WebElement searchField;
 
@@ -24,8 +22,8 @@ public class AmazonMainPage {
   }
 
   public void openHomePage() {
-    this.driver.get(URL_WEB_AMAZON);
-    new WebDriverWait(driver, Duration.ofSeconds(30)).until(
+    HelperClass.openPage(URL_WEB_AMAZON);
+    new WebDriverWait(HelperClass.getDriver(), Duration.ofSeconds(30)).until(
         ExpectedConditions.visibilityOf(searchField));
 
   }
