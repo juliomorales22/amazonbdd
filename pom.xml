@@ -60,23 +60,25 @@
 
     </plugins>
   </build>
+
+  <!-- Cucumber -->
   <dependencies>
     <dependency>
       <artifactId>cucumber-java</artifactId>
       <groupId>io.cucumber</groupId>
       <scope>test</scope>
-      <version>${cucumber-java.version}</version>
+      <version>${cucumber.version}</version>
     </dependency>
     <dependency>
       <artifactId>cucumber-junit-platform-engine</artifactId>
       <groupId>io.cucumber</groupId>
       <scope>test</scope>
-      <version>${cucumber-junit.version}</version>
+      <version>${cucumber.version}</version>
     </dependency>
     <dependency>
       <groupId>io.cucumber</groupId>
       <artifactId>cucumber-junit</artifactId>
-      <version>${cucumber-junit.version}</version>
+      <version>${cucumber.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -84,11 +86,6 @@
       <groupId>io.qameta.allure</groupId>
       <scope>test</scope>
       <version>${allure.version}</version>
-    </dependency>
-    <dependency>
-      <artifactId>testng</artifactId>
-      <groupId>org.testng</groupId>
-      <version>${org.testng.version}</version>
     </dependency>
     <dependency>
       <artifactId>selenide</artifactId>
@@ -102,29 +99,11 @@
       <scope>test</scope>
       <version>${allure.version}</version>
     </dependency>
-    <dependency>
-      <artifactId>webdrivermanager</artifactId>
-      <groupId>io.github.bonigarcia</groupId>
-      <scope>test</scope>
-      <version>${io.github.bonigarcia.version}</version>
-    </dependency>
 
     <dependency>
       <artifactId>slf4j-api</artifactId>
       <groupId>org.slf4j</groupId>
       <version>${slf4j-api.version}</version>
-    </dependency>
-    <dependency>
-      <artifactId>junit-jupiter-api</artifactId>
-      <groupId>org.junit.jupiter</groupId>
-      <scope>test</scope>
-      <version>${junitjupiter-api.version}</version>
-    </dependency>
-    <dependency>
-      <artifactId>junit-jupiter-engine</artifactId>
-      <groupId>org.junit.jupiter</groupId>
-      <scope>test</scope>
-      <version>${junitjupiter.version}</version>
     </dependency>
     <dependency>
       <artifactId>slf4j-simple</artifactId>
@@ -139,12 +118,6 @@
       <version>${org.assertj.version}</version>
     </dependency>
     <dependency>
-      <artifactId>junit</artifactId>
-      <groupId>junit</groupId>
-      <scope>test</scope>
-      <version>${junit.version}</version>
-    </dependency>
-    <dependency>
       <artifactId>selenium-java</artifactId>
       <groupId>org.seleniumhq.selenium</groupId>
       <version>${selenium.version}</version>
@@ -154,36 +127,14 @@
       <groupId>org.apache.directory.studio</groupId>
       <version>${apache.common.version}</version>
     </dependency>
+
     <!-- JUnit Platform -->
-    <dependency>
-      <groupId>org.junit.platform</groupId>
-      <artifactId>junit-platform-suite</artifactId>
-      <version>${org.junit.platform.version}</version>
-      <scope>test</scope>
-    </dependency>
-
-
-    <dependency>
-      <groupId>org.junit</groupId>
-      <artifactId>junit-bom</artifactId>
-      <scope>import</scope>
-      <type>pom</type>
-      <version>${junit.jupiter.version}</version>
-    </dependency>
-
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter</artifactId>
       <scope>test</scope>
       <version>${junit.jupiter.version}</version>
     </dependency>
-    <dependency>
-      <groupId>org.junit.platform</groupId>
-      <artifactId>junit-platform-suite-api</artifactId>
-      <scope>test</scope>
-      <version>${org.junit.platform.version}</version>
-    </dependency>
-    <!-- JUnit Platform -->
     <dependency>
       <artifactId>junit-platform-suite</artifactId>
       <groupId>org.junit.platform</groupId>
@@ -194,7 +145,13 @@
       <artifactId>junit-jupiter-engine</artifactId>
       <groupId>org.junit.jupiter</groupId>
       <scope>test</scope>
-      <version>${junitjupiter.version}</version>
+      <version>${junit.jupiter.version}</version>
+    </dependency>
+
+    <dependency>
+      <artifactId>webdrivermanager</artifactId>
+      <groupId>io.github.bonigarcia</groupId>
+      <version>${webdrivermanager.version}</version>
     </dependency>
   </dependencies>
   <groupId>com.example</groupId>
@@ -203,10 +160,8 @@
   <name>amazoncom</name>
 
   <properties>
-
-    <junit-platform-suite.version>1.9.3</junit-platform-suite.version>
-    <junit.jupiter.version>5.9.0</junit.jupiter.version>
-    <junit.jupiter.version>5.9.0</junit.jupiter.version>
+    <cucumber.version>7.14.0</cucumber.version>
+    <junit-platform-suite.version>1.10.0</junit-platform-suite.version>
     <maven.compiler.plugin.version>3.10.1</maven.compiler.plugin.version>
     <maven.compiler.source.version>11</maven.compiler.source.version>
     <maven.compiler.target.version>11</maven.compiler.target.version>
@@ -215,21 +170,16 @@
     <allure.version>2.24.0</allure.version>
     <aspectj.version>1.9.19</aspectj.version>
     <com.codeborne.version>6.13.1</com.codeborne.version>
-    <cucumber-java.version>7.13.0</cucumber-java.version>
-    <io.github.bonigarcia.version>5.4.1</io.github.bonigarcia.version>
+    <junit.jupiter.version>5.10.0</junit.jupiter.version>
     <io.qameta.allure.version>2.12.0</io.qameta.allure.version>
-    <junit.version>4.13.2</junit.version>
-    <junitjupiter-api.version>5.10.0</junitjupiter-api.version>
-    <junitjupiter.version>5.10.0</junitjupiter.version>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
     <org.apache.maven.plugins.version>2.22.2</org.apache.maven.plugins.version>
     <org.assertj.version>3.24.2</org.assertj.version>
-    <org.testng.version>7.8.0</org.testng.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <slf4j-api.version>2.0.7</slf4j-api.version>
-    <cucumber-junit.version>7.13.0</cucumber-junit.version>
-    <selenium.version>4.3.0</selenium.version>
+    <selenium.version>4.12.1</selenium.version>
+    <webdrivermanager.version>5.5.3</webdrivermanager.version>
     <maven.surefire.plugin.version>3.0.0-M7</maven.surefire.plugin.version>
   </properties>
   <!-- https://mvnrepository.com/artifact/org.assertj/assertj-core -->

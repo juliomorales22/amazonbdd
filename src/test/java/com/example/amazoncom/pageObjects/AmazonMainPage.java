@@ -1,9 +1,9 @@
-package pageObjects;
+package com.example.amazoncom.pageObjects;
 
+import com.example.amazoncom.utils.HelperClass;
 import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AmazonMainPage {
 
-  WebDriver driver;
+  public WebDriver driver;
   @FindBy(id = "twotabsearchtextbox")
   public WebElement searchField;
 
@@ -19,16 +19,15 @@ public class AmazonMainPage {
   public WebElement searchButton;
   final static String URL_WEB_AMAZON = "https://www.amazon.es/";
 
-  public AmazonMainPage(WebDriver driver) {
-    this.driver = driver;
-    this.driver = new ChromeDriver();
-    PageFactory.initElements(driver, this);
+  public AmazonMainPage() {
+    PageFactory.initElements(HelperClass.getDriver(), this);
   }
 
   public void openHomePage() {
-    driver.get(URL_WEB_AMAZON);
-    WebElement waiting = (new WebDriverWait(this.driver, Duration.ofSeconds(30)).until(
-        ExpectedConditions.visibilityOf(searchField)));
+    this.driver.get(URL_WEB_AMAZON);
+    new WebDriverWait(driver, Duration.ofSeconds(30)).until(
+        ExpectedConditions.visibilityOf(searchField));
+
   }
 
   public String getSearchFieldValue() {

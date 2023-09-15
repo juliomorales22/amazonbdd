@@ -1,19 +1,18 @@
-package stepsDefs;
+package com.example.amazoncom.stepsDefs;
 
+import com.example.amazoncom.pageObjects.AmazonMainPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.WebDriver;
-import pageObjects.AmazonMainPage;
 
 public class HomePageSteps {
 
-  public WebDriver driver;
-  AmazonMainPage mainPage = new AmazonMainPage(driver);
+  AmazonMainPage mainPage = new AmazonMainPage();
 
   @Given("Amazon Home page is opened")
   public void openAmazonHomePage() {
+    System.out.println("openened");
     mainPage.openHomePage();
   }
 
