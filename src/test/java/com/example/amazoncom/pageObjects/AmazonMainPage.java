@@ -15,7 +15,16 @@ public class AmazonMainPage {
 
   @FindBy(id = "nav-search-submit-button")
   public WebElement searchButton;
+  @FindBy(id = "nav-link-accountList")
+  public WebElement signUpButton;
+  @FindBy(css = "a[class= \"nav-action-signin-button\"]")
+  public WebElement loginButton;
+  @FindBy(css = "h1[class=\"a-spacing-small\"]")
+  public WebElement titleLogin;
+
+
   final static String URL_WEB_AMAZON = "https://www.amazon.es/";
+
 
   public AmazonMainPage() {
     PageFactory.initElements(HelperClass.getDriver(), this);

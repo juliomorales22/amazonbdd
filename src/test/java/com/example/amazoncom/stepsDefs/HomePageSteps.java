@@ -12,7 +12,6 @@ public class HomePageSteps {
 
   @Given("Amazon Home page is opened")
   public void openAmazonHomePage() {
-    System.out.println("openened");
     mainPage.openHomePage();
   }
 
@@ -26,8 +25,29 @@ public class HomePageSteps {
     mainPage.searchButton.click();
   }
 
+  @When("Click on the  sign up button")
+  public void clickSignUpButton() {
+    mainPage.signUpButton.click();
+  }
+
+  @When("Click on the login button")
+  public void clickLoginButton() {
+    mainPage.loginButton.click();
+  }
+
+
   @Then("Check search result contains {string}")
   public void checkSearchResultContainsValue(String searchValue) {
     Assertions.assertEquals(searchValue, mainPage.getSearchFieldValue());
   }
+
+  @Then("Check page contain {string}")
+  public void checkTitleLogin(String searchValue) {
+    System.out.println(mainPage.titleLogin.getText());
+    System.out.println(mainPage.titleLogin.getAttribute("innerHTML"));
+    ;
+
+    Assertions.assertEquals(searchValue, mainPage.titleLogin.getAttribute("innerHTML"));
+  }
+
 }

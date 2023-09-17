@@ -10,3 +10,4 @@ Feature: Test Amazon Main Page
       | keyWord    |
       | 'Selenium' |
       | 'iPhone'   |
+
