@@ -21,9 +21,13 @@ public class AmazonMainPage {
   public WebElement loginButton;
   @FindBy(css = "h1[class=\"a-spacing-small\"]")
   public WebElement titleLogin;
-
-
-  final static String URL_WEB_AMAZON = "https://www.amazon.es/";
+  final static String URL_WEB_AMAZON = "https://www.amazon.es/ref=nav_bb_logo";
+  @FindBy(id = "nav-cart")
+  public WebElement cartLink;
+  @FindBy(css = "h2")
+  public WebElement cartTitle;
+  @FindBy(id = "nav-hamburguer-menu")
+  public WebElement todoLink;
 
 
   public AmazonMainPage() {

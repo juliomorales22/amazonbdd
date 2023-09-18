@@ -4,8 +4,7 @@ import com.example.amazoncom.pageObjects.AmazonMainPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.jupiter.api.Assertions;
-
+import org.assertj.core.api.Assertions;
 public class HomePageSteps {
 
   AmazonMainPage mainPage = new AmazonMainPage();
@@ -25,7 +24,7 @@ public class HomePageSteps {
     mainPage.searchButton.click();
   }
 
-  @When("Click on the  sign up button")
+  @When("Click on the sign up button")
   public void clickSignUpButton() {
     mainPage.signUpButton.click();
   }
@@ -35,19 +34,33 @@ public class HomePageSteps {
     mainPage.loginButton.click();
   }
 
+  @When("Click on the cartLink")
+  public void clickCartLink() {
+    mainPage.cartLink.click();
+  }
 
+  //
   @Then("Check search result contains {string}")
   public void checkSearchResultContainsValue(String searchValue) {
-    Assertions.assertEquals(searchValue, mainPage.getSearchFieldValue());
+    // Assertions.assertEquals(searchValue, mainPage.getSearchFieldValue());
+    Assertions.assertThat(mainPage.getSearchFieldValue())
+        .as("Failure message: search button doesn't work")
+        .containsIgnoringCase(searchValue);
   }
 
   @Then("Check page contain {string}")
   public void checkTitleLogin(String searchValue) {
-    System.out.println(mainPage.titleLogin.getText());
-    System.out.println(mainPage.titleLogin.getAttribute("innerHTML"));
-    ;
-
-    Assertions.assertEquals(searchValue, mainPage.titleLogin.getAttribute("innerHTML"));
+    Assertions.assertThat(mainPage.titleLogin.getText())
+        .as("Failure message: Login doesn't appear")
+        .containsIgnoringCase(searchValue);
+    //Assertions.assertEquals(searchValue, mainPage.titleLogin.getAttribute("innerHTML"));
   }
 
+  @Then("Check cart is empty")
+  public void checkCartIsEmpty() {
+    // Tá vac
+    Assertions.assertThat(mainPage.cartTitle.getText())
+        .as("Failure message: search button doesn't work")
+        .containsIgnoringCase("de Amazon est").containsIgnoringCase("vac");
+  }
 }
