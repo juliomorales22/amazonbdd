@@ -1,6 +1,6 @@
-Feature: Test Amazon page login
+Feature: check login form is displayed
 
   Scenario:
     Given Amazon page is opened
     When  Click on the sign up button
-    Then Check page contain 'Iniciar sesi'
+    Then Check page contains 'Iniciar sesi' and then check login form is displayed

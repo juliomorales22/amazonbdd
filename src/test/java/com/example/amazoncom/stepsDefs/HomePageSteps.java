@@ -27,7 +27,7 @@ public class HomePageSteps {
 
   @Then("Check search result contains {string}")
   public void checkSearchResultContainsValue(String searchValue) {
-    // Assertions.assertEquals(searchValue, mainPage.getSearchFieldValue());
+
     Assertions.assertThat(mainPage.getSearchFieldValue())
         .as("Failure message: search button doesn't work")
         .containsIgnoringCase(searchValue);
@@ -40,7 +40,7 @@ public class HomePageSteps {
     mainPage.signUpButton.click();
   }
 
-  @Then("Check page contain {string}")
+  @Then("Check page contains {string} and then check login form is displayed")
   public void checkTitleLogin(String searchValue) {
     Assertions.assertThat(mainPage.titleLogin.getText())
         .as("Failure message: Login doesn't appear")
@@ -63,7 +63,7 @@ public class HomePageSteps {
     mainPage.confirmPostCode.click();
   }
 
-  @Then("Check ciudad location is {string}")
+  @Then("Check city is {string}")
   public void checkCartIsEmpty(String searchValue) {
     Assertions.assertThat(mainPage.cityLocation.getText())
         .as("Failure message: search button doesn't work")
