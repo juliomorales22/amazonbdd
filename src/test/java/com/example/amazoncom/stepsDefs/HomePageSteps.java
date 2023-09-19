@@ -9,10 +9,9 @@ public class HomePageSteps {
 
   AmazonMainPage mainPage = new AmazonMainPage();
 
-  @Given("Amazon Home page is opened")
+  @Given("Amazon page is opened")
   public void openAmazonHomePage() {
     mainPage.openHomePage();
-    //mainPage.logoAmazon.click(); // to avoid load the second type webpage from amazon.
     mainPage.acceptCookies.click();
   }
 
@@ -27,49 +26,42 @@ public class HomePageSteps {
 
   @Then("Check search result contains {string}")
   public void checkSearchResultContainsValue(String searchValue) {
-    // Assertions.assertEquals(searchValue, mainPage.getSearchFieldValue());
     Assertions.assertThat(mainPage.getSearchFieldValue())
-        .as("Failure message: search button doesn't work")
         .containsIgnoringCase(searchValue);
   }
 
-
-  //form to login
+  //functions to check the form login page
   @When("Click on the sign up button")
   public void clickSignUpButton() {
     mainPage.signUpButton.click();
   }
 
-  @Then("Check page contain {string}")
+  @Then("Check page contains {string}")
   public void checkTitleLogin(String searchValue) {
     Assertions.assertThat(mainPage.titleLogin.getText())
-        .as("Failure message: Login doesn't appear")
         .containsIgnoringCase(searchValue);
   }
-  //
-// post code city
+//  code city to find a city
 
   @When("Click on the location button")
   public void clickLocationtLink() {
     mainPage.locationLink.click();
   }
 
-  @When("Write post code {string}")
+  @When("Type post code {string}")
   public void typeValueIntoThePostCodeInput(String searchValue) {
     mainPage.postCodeInput.sendKeys(searchValue);
   }
 
 
   @When("Click on the confirm Post Code button")
-  public void clickLocationLink() {
+  public void clickLocationbutton() {
     mainPage.confirmPostCode.click();
   }
 
-  @Then("Check ciudad location is {string}")
+  @Then("Check city is {string}")
   public void checkCartIsEmpty(String searchValue) {
-    // Tá vac
     Assertions.assertThat(mainPage.cityLocation.getText())
-        .as("Failure message: search button doesn't work")
         .containsIgnoringCase(searchValue);
   }
 
@@ -82,7 +74,6 @@ public class HomePageSteps {
   public void checkCartIsEmpty() {
     // Tá vac
     Assertions.assertThat(mainPage.cartTitle.getText())
-        .as("Failure message: search button doesn't work")
         .containsIgnoringCase("de Amazon est").containsIgnoringCase("vac");
   }
 

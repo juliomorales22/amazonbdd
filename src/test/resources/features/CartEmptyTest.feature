@@ -1,6 +1,6 @@
-Feature: Test Amazon page login
+Feature: Test cart is empty
 
   Scenario:
-    Given Amazon Home page is opened
+    Given Amazon page is opened
     When  Click on the cartLink
     Then Check cart is empty
