@@ -9,9 +9,10 @@ public class HomePageSteps {
 
   AmazonMainPage mainPage = new AmazonMainPage();
 
-  @Given("Amazon page is opened")
+  @Given("Amazon Home page is opened")
   public void openAmazonHomePage() {
     mainPage.openHomePage();
+    //mainPage.logoAmazon.click(); // to avoid load the second type webpage from amazon.
     mainPage.acceptCookies.click();
   }
 
@@ -19,7 +20,6 @@ public class HomePageSteps {
   public void typeValueIntoTheSearchField(String searchValue) {
     mainPage.searchField.sendKeys(searchValue);
   }
-
   @When("Click on the search button")
   public void clickSearchButton() {
     mainPage.searchButton.click();
@@ -46,8 +46,9 @@ public class HomePageSteps {
         .as("Failure message: Login doesn't appear")
         .containsIgnoringCase(searchValue);
   }
+  //
+// post code city
 
-  // post code city
   @When("Click on the location button")
   public void clickLocationtLink() {
     mainPage.locationLink.click();
@@ -58,6 +59,7 @@ public class HomePageSteps {
     mainPage.postCodeInput.sendKeys(searchValue);
   }
 
+
   @When("Click on the confirm Post Code button")
   public void clickLocationLink() {
     mainPage.confirmPostCode.click();
@@ -65,6 +67,7 @@ public class HomePageSteps {
 
   @Then("Check ciudad location is {string}")
   public void checkCartIsEmpty(String searchValue) {
+    // Tá vac
     Assertions.assertThat(mainPage.cityLocation.getText())
         .as("Failure message: search button doesn't work")
         .containsIgnoringCase(searchValue);
@@ -75,7 +78,6 @@ public class HomePageSteps {
   public void clickCartLink() {
     mainPage.cartLink.click();
   }
-
   @Then("Check cart is empty")
   public void checkCartIsEmpty() {
     // Tá vac
