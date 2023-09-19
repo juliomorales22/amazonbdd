@@ -36,7 +36,7 @@ public class AmazonMainPage {
   public WebElement postCodeInput;
 
   @FindBy(css = "input[  aria-labelledby=\"GLUXZipUpdate-announce\"]")
-  public WebElement confirmPostCode;
+  public WebElement confirmPostCodeButton;
 
   @FindBy(id = "glow-ingress-line2")
   public WebElement cityLocation;

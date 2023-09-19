@@ -53,7 +53,7 @@ public class HomePageSteps {
 
   @When("Click on the confirm Post Code button")
   public void clickLocationButton() {
-    mainPage.confirmPostCode.click();
+    mainPage.confirmPostCodeButton.click();
   }
 
   @Then("Check city is {string}")
