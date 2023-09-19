@@ -1,4 +1,4 @@
-Feature: Test if cart is empty
+Feature: Test Amazon page login
 
   Scenario:
     Given Amazon page is opened
