@@ -30,7 +30,6 @@ public class HomePageSteps {
         .containsIgnoringCase(searchValue);
   }
 
-  //functions to check the form login page
   @When("Click on the sign up button")
   public void clickSignUpButton() {
     mainPage.signUpButton.click();
@@ -41,10 +40,9 @@ public class HomePageSteps {
     Assertions.assertThat(mainPage.titleLogin.getText())
         .containsIgnoringCase(searchValue);
   }
-//  code city to find a city
 
   @When("Click on the location button")
-  public void clickLocationtLink() {
+  public void clickLocationtButton() {
     mainPage.locationLink.click();
   }
 
@@ -55,7 +53,7 @@ public class HomePageSteps {
 
 
   @When("Click on the confirm Post Code button")
-  public void clickLocationbutton() {
+  public void clickLocationButton() {
     mainPage.confirmPostCode.click();
   }
 
@@ -65,16 +63,14 @@ public class HomePageSteps {
         .containsIgnoringCase(searchValue);
   }
 
-  // cart is empty
   @When("Click on the cartLink")
   public void clickCartLink() {
     mainPage.cartLink.click();
   }
   @Then("Check cart is empty")
   public void checkCartIsEmpty() {
-    // Tá vac
     Assertions.assertThat(mainPage.cartTitle.getText())
-        .containsIgnoringCase("de Amazon est").containsIgnoringCase("vac");
+        .containsIgnoringCase("Tu cesta de Amazon está vacía");
   }
 
 }
