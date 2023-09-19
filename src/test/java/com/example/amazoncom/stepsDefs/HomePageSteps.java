@@ -1,5 +1,4 @@
 package com.example.amazoncom.stepsDefs;
-
 import com.example.amazoncom.pageObjects.AmazonMainPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;

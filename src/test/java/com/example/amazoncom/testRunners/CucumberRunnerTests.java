@@ -13,6 +13,5 @@ import org.junit.platform.suite.api.Suite;
 @ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "com.example")
 
 public class CucumberRunnerTests {
-
 }
 
