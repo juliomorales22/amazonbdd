@@ -43,4 +43,5 @@ public class HelperClass {
   public static void openPage(String url) {
     driver.get(url);
   }
+
 }
