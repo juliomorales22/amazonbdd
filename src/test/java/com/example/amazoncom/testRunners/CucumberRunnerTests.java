@@ -9,7 +9,7 @@ import org.junit.platform.suite.api.Suite;
 
 @Suite
 @IncludeEngines("cucumber")
-@SelectClasspathResource("com/example")
+@SelectClasspathResource("resources.features")
 @ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "com.example")
 
 public class CucumberRunnerTests {
